@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小暖 XiaoNuan - 不慌不忙，温暖如初</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container flex-between">
+            <div class="logo">
+                <span class="logo-icon"></span>
+                <span class="logo-text">小暖 <span>XiaoNuan</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">特性</a>
+                <a href="#download" class="btn-primary">立即下载</a>
+                <a href="https://github.com/lepfinder/xiaonuan-agent" target="_blank" class="github-link">
+                    <i data-lucide="github"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">不慌不忙，<br><span class="accent">温暖如初</span></h1>
+                <p class="hero-subtitle">下一代家庭智能助手，用更有温度的方式管理你的数字生活。</p>
+                <div class="hero-actions">
+                    <a href="https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan-0.1.8-arm64.dmg" class="btn-main">
+                        <i data-lucide="apple"></i>
+                        下载 macOS 版 (v0.1.8)
+                    </a>
+                    <p class="version-info">支持 Apple Silicon (M1/M2/M3)</p>
+                </div>
+            </div>
+            
+            <div class="hero-preview">
+                <div class="glass-card main-ui">
+                    <div class="card-header">
+                        <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <div class="card-title">XiaoNuan Home</div>
+                    </div>
+                    <div class="card-content flex">
+                        <div class="sidebar-mock"></div>
+                        <div class="chat-mock">
+                            <div class="bubble bot">你好，爸爸。今天的家庭排程已经更新。</div>
+                            <div class="bubble user">谢谢小暖，下午提醒我接孩子。</div>
+                            <div class="bubble bot">好的，已为您创建 16:30 的提醒任务。</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card floating-card-1">
+                    <div class="flex-between mb-2">
+                        <span class="tag">今日提醒</span>
+                        <i data-lucide="bell" class="icon-s"></i>
+                    </div>
+                    <div class="task-item">给妈妈打电话</div>
+                    <div class="task-time">19:00</div>
+                </div>
+                <div class="glass-card floating-card-2">
+                    <div class="flex-between mb-2">
+                        <span class="tag success">同步成功</span>
+                        <i data-lucide="refresh-cw" class="icon-s"></i>
+                    </div>
+                    <div class="device-info">Pad 陪伴屏已连接</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title text-center">核心能力</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="f-icon"><i data-lucide="message-square"></i></div>
+                    <h3>智能会话</h3>
+                    <p>基于私有模型，像家人一样与你交流，记住家庭的每一个细节。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="f-icon"><i data-lucide="calendar"></i></div>
+                    <h3>自动化排程</h3>
+                    <p>Agent 驱动的任务调度系统，自动管理提醒、作业与家庭事务。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="f-icon"><i data-lucide="layers"></i></div>
+                    <h3>多端联动</h3>
+                    <p>桌面端、Pad 陪伴屏、移动端实时同步，信息流转不间断。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="f-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>隐私安全</h3>
+                    <p>核心数据本地化存储，端到端加密，守护家庭最私密的角落。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo small">
+                    <span class="logo-icon"></span>
+                    <span class="logo-text">小暖</span>
+                </div>
+                <p>© 2026 HomeCore Team. Crafted with love for family.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
