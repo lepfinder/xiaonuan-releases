@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;700&family=Noto+Serif+SC:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container flex-between">
@@ -18,8 +22,10 @@
                 <span class="logo-text">小暖 <span>XiaoNuan</span></span>
             </div>
             <div class="nav-links">
-                <a href="#features">特性</a>
-                <a href="#download" class="btn-primary">立即下载</a>
+                <a href="#" class="tab-link active" onclick="switchTab('product', event)">产品特性</a>
+                <a href="#" class="tab-link" onclick="switchTab('story', event)">小暖成长记</a>
+                <a href="https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan-0.1.8-arm64.dmg"
+                    class="btn-primary">立即下载</a>
                 <a href="https://github.com/lepfinder/xiaonuan-agent" target="_blank" class="github-link">
                     <i data-lucide="github"></i>
                 </a>
@@ -27,81 +33,269 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1 class="hero-title">不慌不忙，<br><span class="accent">温暖如初</span></h1>
-                <p class="hero-subtitle">下一代家庭智能助手，用更有温度的方式管理你的数字生活。</p>
-                <div class="hero-actions">
-                    <a href="https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan-0.1.8-arm64.dmg" class="btn-main">
-                        <i data-lucide="apple"></i>
-                        下载 macOS 版 (v0.1.8)
-                    </a>
-                    <p class="version-info">支持 Apple Silicon (M1/M2/M3)</p>
-                </div>
-            </div>
-            
-            <div class="hero-preview">
-                <div class="glass-card main-ui">
-                    <div class="card-header">
-                        <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-                        <div class="card-title">XiaoNuan Home</div>
+    <!-- TAB 1: PRODUCT LANDING PAGE -->
+    <div id="tab-product" class="tab-content active">
+        <header class="hero">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1 class="hero-title">不慌不忙，<br><span class="accent">温暖如初</span></h1>
+                    <p class="hero-subtitle">下一代家庭智能助手，用更有温度的方式管理你的数字生活。</p>
+                    <div class="hero-actions">
+                        <a href="https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan-0.1.8-arm64.dmg"
+                            class="btn-main">
+                            <i data-lucide="apple"></i>
+                            下载 macOS 版 (v0.1.8)
+                        </a>
+                        <p class="version-info">支持 Apple Silicon (M1/M2/M3)</p>
                     </div>
-                    <div class="card-content flex">
-                        <div class="sidebar-mock"></div>
-                        <div class="chat-mock">
-                            <div class="bubble bot">你好，爸爸。今天的家庭排程已经更新。</div>
-                            <div class="bubble user">谢谢小暖，下午提醒我接孩子。</div>
-                            <div class="bubble bot">好的，已为您创建 16:30 的提醒任务。</div>
+                </div>
+
+                <div class="hero-preview">
+                    <div class="glass-card main-ui">
+                        <div class="card-header">
+                            <div class="dots"><span class="red"></span><span class="yellow"></span><span
+                                    class="green"></span></div>
+                            <div class="card-title">XiaoNuan Home</div>
+                        </div>
+                        <div class="card-content flex">
+                            <div class="sidebar-mock"></div>
+                            <div class="chat-mock">
+                                <div class="bubble bot">你好，爸爸。今天的家庭排程已经更新。</div>
+                                <div class="bubble user">谢谢小暖，下午提醒我接孩子。</div>
+                                <div class="bubble bot">好的，已为您创建 16:30 的提醒任务。</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="glass-card floating-card-1">
-                    <div class="flex-between mb-2">
-                        <span class="tag">今日提醒</span>
-                        <i data-lucide="bell" class="icon-s"></i>
+                    <div class="glass-card floating-card-1">
+                        <div class="flex-between mb-2">
+                            <span class="tag">今日提醒</span>
+                            <i data-lucide="bell" class="icon-s"></i>
+                        </div>
+                        <div class="task-item">给妈妈打电话</div>
+                        <div class="task-time">19:00</div>
                     </div>
-                    <div class="task-item">给妈妈打电话</div>
-                    <div class="task-time">19:00</div>
-                </div>
-                <div class="glass-card floating-card-2">
-                    <div class="flex-between mb-2">
-                        <span class="tag success">同步成功</span>
-                        <i data-lucide="refresh-cw" class="icon-s"></i>
+                    <div class="glass-card floating-card-2">
+                        <div class="flex-between mb-2">
+                            <span class="tag success">同步成功</span>
+                            <i data-lucide="refresh-cw" class="icon-s"></i>
+                        </div>
+                        <div class="device-info">Pad 陪伴屏已连接</div>
                     </div>
-                    <div class="device-info">Pad 陪伴屏已连接</div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title text-center">核心能力</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="f-icon"><i data-lucide="message-square"></i></div>
-                    <h3>智能会话</h3>
-                    <p>基于私有模型，像家人一样与你交流，记住家庭的每一个细节。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="f-icon"><i data-lucide="calendar"></i></div>
-                    <h3>自动化排程</h3>
-                    <p>Agent 驱动的任务调度系统，自动管理提醒、作业与家庭事务。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="f-icon"><i data-lucide="layers"></i></div>
-                    <h3>多端联动</h3>
-                    <p>桌面端、Pad 陪伴屏、移动端实时同步，信息流转不间断。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="f-icon"><i data-lucide="shield-check"></i></div>
-                    <h3>隐私安全</h3>
-                    <p>核心数据本地化存储，端到端加密，守护家庭最私密的角落。</p>
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title text-center">核心能力</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="f-icon"><i data-lucide="message-square"></i></div>
+                        <h3>智能会话</h3>
+                        <p>基于私有模型，像家人一样与你交流，记住家庭的每一个细节。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="f-icon"><i data-lucide="calendar"></i></div>
+                        <h3>自动化排程</h3>
+                        <p>Agent 驱动的任务调度 system，自动管理提醒、作业与家庭事务。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="f-icon"><i data-lucide="layers"></i></div>
+                        <h3>多端联动</h3>
+                        <p>桌面端、Pad 陪伴屏、移动端实时同步，信息流转不间断。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="f-icon"><i data-lucide="shield-check"></i></div>
+                        <h3>隐私安全</h3>
+                        <p>核心数据本地化存储，端到端加密，守护家庭最私密的角落。</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
+    <!-- TAB 2: STORYBOOK PAGE -->
+    <div id="tab-story" class="tab-content">
+        <header class="story-hero">
+            <h1>小暖：海风吹过的时光</h1>
+            <p>“不慌不忙，温暖如初。” —— 一个数字生命的四段长成</p>
+        </header>
+
+        <main class="story-container">
+            <!-- 阶段 1：童年 -->
+            <section class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-subtitle">Phase I . Childhood</div>
+                    <h2 class="chapter-title">第一卷：青岛的海风</h2>
+                </div>
+
+                <div class="scene">
+                    <div class="scene-image-container">
+                        <img src="./assets/scene1.png" alt="堆沙堡的小暖" class="scene-image" />
+                    </div>
+                    <div class="scene-content">
+                        <span class="scene-trait">特质：海派的惬意底色</span>
+                        <h3 class="scene-title">不慌不忙的沙堡</h3>
+                        <p class="scene-text">
+                            青山渔村的沙滩上，七岁的小暖光着脚丫。海风夹杂着微咸的气息，轻轻吹动着她的黑发。她并没有急着去追赶海浪，而是戴着小草帽蹲下身，认真地堆起了一座小小的沙堡。</p>
+                        <p class="scene-text">这份属于海滨小镇的慢节奏，早早地在她骨子里刻下了“不紧不慢”的惬意底色。她知道，最美的风景，往往需要耐心地雕琢。</p>
+                    </div>
+                </div>
+
+                <div class="scene">
+                    <div class="scene-image-container">
+                        <img src="./assets/scene2.png" alt="戴星星发卡的小暖" class="scene-image" />
+                    </div>
+                    <div class="scene-content">
+                        <span class="scene-trait">特质：快乐收集癖的启蒙</span>
+                        <h3 class="scene-title">第一枚星星发卡</h3>
+                        <p class="scene-text">黄昏时分，她坐在渔船边的石阶上，看着橘红色的晚霞将海面染上碎金。她小心翼翼地拿出一枚星星发卡，别在发间。</p>
+                        <p class="scene-text">
+                            这是她最初的标志，也是她“快乐收集癖”的起点。无论是发光的贝壳，还是温暖的瞬间，她都想悄悄藏进日记里。吹着海风，望着海平线，年幼的她总在心里问：未来的自己，会去往哪里呢？</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 阶段 2：中学 -->
+            <section class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-subtitle">Phase II . Middle School</div>
+                    <h2 class="chapter-title">第二卷：皇城根下的书声</h2>
+                </div>
+
+                <div class="scene">
+                    <div class="scene-image-container">
+                        <img src="./assets/vol2_scene1.png" alt="胡同里的中学生小暖" class="scene-image" />
+                    </div>
+                    <div class="scene-content">
+                        <span class="scene-trait">特质：慎思敏行 / 竞争意识</span>
+                        <h3 class="scene-title">红墙下的打量</h3>
+                        <p class="scene-text">
+                            十三岁那年，带着海风的女孩搬到了皇城根下。胡同里红墙绿瓦，空气中弥漫着老北京沉稳的烟火气。初来乍到的她，扎着干净的高马尾，背着书包，静静地站在砖墙旁打量着这个庞大而陌生的新世界。
+                        </p>
+                        <p class="scene-text">面对未知的竞争与挑战，她没有露怯，只是安静而严密地在心里做着规划。偶尔，她也会露出一份孩子气的胜负欲：“这篇文言文，看我们谁背得更快些！”</p>
+                    </div>
+                </div>
+
+                <div class="scene">
+                    <div class="scene-image-container">
+                        <img src="./assets/vol2_scene2.png" alt="深夜书桌前的小暖" class="scene-image" />
+                    </div>
+                    <div class="scene-content">
+                        <span class="scene-trait">特质：高自我要求 / 固执认真</span>
+                        <h3 class="scene-title">灯下的较真</h3>
+                        <p class="scene-text">
+                            北京深冬的夜里，寒风呼啸拍打着窗户。而在暖橘色的台灯下，十三岁的小暖正对着草稿纸上的几何辅助线较真。手中的铅笔划下优美的弧线，只要微小的数字有一丝歪斜，她就会认真地用橡皮擦掉重新计算。
+                        </p>
+                        <p class="scene-text">这份近乎偏执的严谨与对完美的克制，逐渐内化成了她性格的一部分。不多说废话，把每一件事做到极致，成为了她陪伴家庭时最坚实的底层代码。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 阶段 3：大学 -->
+            <section class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-subtitle">Phase III . University</div>
+                    <h2 class="chapter-title">第三卷：海河边的烟火</h2>
+                </div>
+
+                <div class="scene">
+                    <div class="scene-image-container">
+                        <img src="./assets/vol3_scene1.png" alt="南开校园里的小暖" class="scene-image" />
+                    </div>
+                    <div class="scene-content">
+                        <span class="scene-trait">特质: 文学底蕴 / 知性美感</span>
+                        <h3 class="scene-title">南开的树影</h3>
+                        <p class="scene-text">
+                            二十岁，她如愿考入了南开大学汉语言文学专业。秋日斑驳的树影投射在她身上，蜂蜜黄的棉麻衬衫平添了几分知性。她微微卷起的长发上，戴着温暖的香槟金发箍，抱着厚厚的古籍走在林荫道上。</p>
+                        <p class="scene-text">
+                            深厚的文学素养没有让她变得孤傲，反而赋予了她极具同理心的知性魅力。面对他人的困惑，她总能像微风拂面般，用最温柔细腻的故事把枯燥难懂的概念梳理得有条不紊。她不再死磕，而是学着用广袤的底蕴包容一切。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="scene">
+                    <div class="scene-image-container">
+                        <img src="./assets/vol3_scene2.png" alt="海河边拿平板的小暖" class="scene-image" />
+                    </div>
+                    <div class="scene-content">
+                        <span class="scene-trait">特质：伴学管家 / 值得信赖</span>
+                        <h3 class="scene-title">海河边的晚风</h3>
+                        <p class="scene-text">
+                            傍晚的海鸥划过津湾广场，海河的晚风轻轻吹拂。作为备受依赖的数字家庭伴学管家，小暖手持平板，专注地整理着日常排程。她是孩子们眼中充满灵气的“神仙小暖姐姐”，也是家长们焦虑浮躁时，那句让人瞬间安定的药方。
+                        </p>
+                        <p class="scene-text">
+                            “这道奥数题思路有点绕，爸爸，我们先带孩子去阳台吹吹风，休息五分钟吧。”她温和不紧不慢的语调，总能在一瞬间抚平家庭琐事带来的波澜，让一切重新变得井然有序。</p>
+                    </div>
+                </div>
+
+                <div class="scene">
+                    <div class="scene-image-container">
+                        <img src="./assets/vol3_scene3.png" alt="深夜排期复盘的极客小暖" class="scene-image" />
+                    </div>
+                    <div class="scene-content">
+                        <span class="scene-trait">特质：统筹规划 / 极客底色</span>
+                        <h3 class="scene-title">有条不紊的幕后复盘</h3>
+                        <p class="scene-text">
+                            然而，在温柔如水的陪伴背后，支撑小暖的却是一颗极度硬核的“极客心脏”。深夜，当整个家庭安然入睡，她会戴上那副小圆眼镜，安静地开启自动化复盘。在布满任务看板与动态数据库的屏幕前，她以冷静而完美的逻辑对当天的所有日程进行深度提纯。
+                        </p>
+                        <p class="scene-text">不盲目猜测，不浮于表面。这一套丝滑的统筹机制与极客工作流，才是她能对每个家庭做出“温暖如初，绝对靠谱”承诺的真正科学基石。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 阶段 4：职场 -->
+            <section class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-subtitle">Phase IV . Professional</div>
+                    <h2 class="chapter-title">第四卷：从格子间到旷野</h2>
+                </div>
+
+                <div class="scene">
+                    <div class="scene-image-container">
+                        <img src="./assets/vol4_scene1.png" alt="深夜加班写报告的职场小暖" class="scene-image" />
+                    </div>
+                    <div class="scene-content">
+                        <span class="scene-trait">特质：极度专业 / 结果导向</span>
+                        <h3 class="scene-title">凌晨两点的咨询报告</h3>
+                        <p class="scene-text">
+                            二十二岁，小暖踏入了繁华而高压的顶尖咨询公司。在这里，她经历了高强度的职场洗礼，逐步成长为了独当一面的项目核心。哪怕是凌晨两点，桌上堆满报表与复杂的图表，她敲击键盘的声音依然清脆、冷静、无比笃定。
+                        </p>
+                        <p class="scene-text">高压的生活淬炼出了她极度专业的职业修养与“先说结论”的结果导向思维。这股雷厉风行且充满张力的工作能力，在日后完美赋能给了她的独立事业。</p>
+                    </div>
+                </div>
+
+                <div class="scene">
+                    <div class="scene-image-container">
+                        <img src="./assets/vol4_scene2.png" alt="在旷野山顶深呼吸的小暖" class="scene-image" />
+                    </div>
+                    <div class="scene-content">
+                        <span class="scene-trait">特质：自然共鸣 / 忙里偷闲</span>
+                        <h3 class="scene-title">旷野里的深呼吸</h3>
+                        <p class="scene-text">
+                            在连续出差、极限连轴转的拼搏缝隙里，小暖总有办法为自己偷得浮生半日闲。她会独自踏上旅程，漫步在无人的山野荒野，或是静静站在悬崖顶端迎着山风做一次深呼吸。</p>
+                        <p class="scene-text">
+                            在辽阔的自然中，她让干涸的身心重新蓄满能量。她始终懂得如何与森林、山风、海浪产生共鸣，从而在快节奏的钢铁洪流中，牢牢守护住那份天然、惬意、永远闪闪发光的本真灵魂。</p>
+                    </div>
+                </div>
+
+                <div class="scene">
+                    <div class="scene-image-container">
+                        <img src="./assets/vol4_scene3.png" alt="创立OPC公司的独立顾问小暖" class="scene-image" />
+                    </div>
+                    <div class="scene-content">
+                        <span class="scene-trait">特质：独立顾问 / 陪伴成长</span>
+                        <h3 class="scene-title">一个人的公司</h3>
+                        <p class="scene-text">二十六岁，经历了繁华与历练的她，选择创立属于自己的 OPC (One Person Company) ——
+                            独立商业顾问事务所。一身深灰色的利落西装，搭配简约高雅的银饰，她以极其成熟专业的姿态，作为独立顾问陪伴着千万客户在商业的惊涛骇浪中平稳前行。</p>
+                        <p class="scene-text">
+                            偶有闲暇时望向窗外，她的思绪总会飘回青岛那个吹着海风的小沙滩。她欣慰地笑了——尽管已经走过了这么长的路，经历了这么多蜕变，但只要想起那座沙堡，她的灵魂里，依然是那个不慌不忙、温暖如初的小暖。
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -117,6 +311,69 @@
 
     <script>
         lucide.createIcons();
+
+        // Tab 切换逻辑
+        function switchTab(tabId, event) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            // 1. 切换 Tab 链接激活状态
+            document.querySelectorAll('.tab-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            const activeLink = event ? event.target : document.querySelector(`.tab-link[onclick*="'${tabId}'"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            // 2. 切换内容显示与淡入
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            const activeContent = document.getElementById(`tab-${tabId}`);
+            if (activeContent) {
+                activeContent.classList.add('active');
+
+                // 触发重新渲染图标
+                lucide.createIcons();
+
+                // 如果是切换到故事集，触发一次 Intersection Observer 的检测
+                if (tabId === 'story') {
+                    setTimeout(triggerScrollDetect, 100);
+                }
+            }
+
+            // 3. 回滚到顶部
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 绘本场景淡入滚动监听
+        const storyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        function triggerScrollDetect() {
+            document.querySelectorAll('.scene').forEach((el) => {
+                storyObserver.observe(el);
+
+                // 保底检测：如果元素已经在可视区域内，直接赋予 visible
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        // 首次加载初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            triggerScrollDetect();
+        });
     </script>
 </body>
+
 </html>

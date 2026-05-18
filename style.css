@@ -337,4 +337,160 @@ body {
     .hero-title { font-size: 56px; }
     .hero-preview { height: 400px; }
     .main-ui { width: 90%; }
+    .scene, .scene:nth-child(even) { grid-template-columns: 1fr; gap: 30px; direction: ltr; }
+    .scene-content { padding: 10px 0; }
+}
+
+/* Tab Switching System */
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tab-link {
+    cursor: pointer;
+    position: relative;
+    padding: 4px 0;
+}
+.tab-link.active {
+    color: var(--accent) !important;
+    opacity: 1 !important;
+}
+.tab-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* Story Book Exquisite Styles (Noto Serif SC Literary Aesthetics) */
+.story-hero {
+    text-align: center;
+    padding: 160px 20px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.story-hero h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    color: var(--text-main);
+}
+.story-hero p {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 16px;
+    color: var(--text-sub);
+    opacity: 0.8;
+    letter-spacing: 0.02em;
+}
+.story-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px 100px;
+}
+.chapter {
+    margin-bottom: 140px;
+}
+.chapter-header {
+    text-align: center;
+    margin-bottom: 80px;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 40px;
+}
+.chapter-subtitle {
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+.chapter-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+.scene {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scene.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.scene:nth-child(even) {
+    direction: rtl;
+}
+.scene:nth-child(even) .scene-content {
+    direction: ltr;
+}
+.scene-image-container {
+    width: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(139, 69, 19, 0.08);
+    border: 1px solid var(--border);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.scene-image-container:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 30px 60px rgba(139, 69, 19, 0.15);
+}
+.scene-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.scene-content {
+    padding: 20px 0;
+}
+.scene-trait {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(217, 119, 6, 0.07);
+    color: var(--accent);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.02em;
+}
+.scene-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    letter-spacing: 0.02em;
+}
+.scene-text {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 14.5px;
+    color: var(--text-sub);
+    line-height: 1.9;
+    margin-bottom: 16px;
+    opacity: 0.9;
+    text-align: justify;
 }
