@@ -335,9 +335,6 @@
             if (activeContent) {
                 activeContent.classList.add('active');
 
-                // 触发重新渲染图标
-                lucide.createIcons();
-
                 // 如果是切换到故事集，触发一次 Intersection Observer 的检测
                 if (tabId === 'story') {
                     setTimeout(triggerScrollDetect, 100);
