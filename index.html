@@ -22,10 +22,8 @@
                 <span class="logo-text">小暖 <span>XiaoNuan</span></span>
             </div>
             <div class="nav-links">
-                <a href="#" class="tab-link active" onclick="switchTab('product', event)">产品特性</a>
-                <a href="#" class="tab-link" onclick="switchTab('story', event)">小暖成长记</a>
-                <a href="https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan-0.1.8-arm64.dmg"
-                    class="btn-primary">立即下载</a>
+                <a href="#features">产品特性</a>
+                <a href="#download" class="btn-primary" onclick="goDownload(event)">立即下载</a>
                 <a href="https://github.com/lepfinder/xiaonuan-agent" target="_blank" class="github-link">
                     <i data-lucide="github"></i>
                 </a>
@@ -36,86 +34,232 @@
     <!-- TAB 1: PRODUCT LANDING PAGE -->
     <div id="tab-product" class="tab-content active">
         <header class="hero">
+            <div class="container hero-copy">
+                <p class="hero-kicker">XiaoNuan Home Core · v0.1.43</p>
+                <h1 class="hero-title">不慌不忙，<br><span class="accent">温暖如初</span></h1>
+                <p class="hero-subtitle">本地优先的家庭智能中枢。对话、见闻、日历、待办、相册、账本、订单、出行——一家的日子，都收在这一处。</p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn-main" onclick="goDownload(event)">
+                        <i data-lucide="download"></i>
+                        下载最新版
+                    </a>
+                    <p class="version-info">macOS Apple Silicon / Intel · Windows · 数据只存在你的硬盘里</p>
+                </div>
+            </div>
             <div class="container">
-                <div class="hero-content" data-aos="fade-up">
-                    <h1 class="hero-title">不慌不忙，<br><span class="accent">温暖如初</span></h1>
-                    <p class="hero-subtitle">下一代家庭智能助手，用更有温度的方式管理你的数字生活。</p>
-                    <div class="hero-actions">
-                        <a href="https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan-0.1.8-arm64.dmg"
-                            class="btn-main">
-                            <i data-lucide="apple"></i>
-                            下载 macOS 版 (v0.1.8)
-                        </a>
-                        <p class="version-info">支持 Apple Silicon (M1/M2/M3)</p>
-                    </div>
-                </div>
-
-                <div class="hero-preview">
-                    <div class="glass-card main-ui">
-                        <div class="card-header">
-                            <div class="dots"><span class="red"></span><span class="yellow"></span><span
-                                    class="green"></span></div>
-                            <div class="card-title">XiaoNuan Home</div>
-                        </div>
-                        <div class="card-content flex">
-                            <div class="sidebar-mock"></div>
-                            <div class="chat-mock">
-                                <div class="bubble bot">你好，爸爸。今天的家庭排程已经更新。</div>
-                                <div class="bubble user">谢谢小暖，下午提醒我接孩子。</div>
-                                <div class="bubble bot">好的，已为您创建 16:30 的提醒任务。</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass-card floating-card-1">
-                        <div class="flex-between mb-2">
-                            <span class="tag">今日提醒</span>
-                            <i data-lucide="bell" class="icon-s"></i>
-                        </div>
-                        <div class="task-item">给妈妈打电话</div>
-                        <div class="task-time">19:00</div>
-                    </div>
-                    <div class="glass-card floating-card-2">
-                        <div class="flex-between mb-2">
-                            <span class="tag success">同步成功</span>
-                            <i data-lucide="refresh-cw" class="icon-s"></i>
-                        </div>
-                        <div class="device-info">Pad 陪伴屏已连接</div>
-                    </div>
-                </div>
+                <button type="button" class="shot hero-shot" onclick="openLightbox('./images/chat.jpg', '和小暖对话')">
+                    <img src="./images/chat.jpg" alt="和小暖对话：研究文章、调用技能、一键剪藏进库" />
+                </button>
             </div>
         </header>
 
         <section id="features" class="features">
             <div class="container">
-                <h2 class="section-title text-center">核心能力</h2>
+                <h2 class="section-title text-center">一家的操作系统</h2>
+                <p class="section-lead text-center">不是又一个聊天窗口，而是把家庭日程、记忆和琐事真正管起来的本地中枢。</p>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="f-icon"><i data-lucide="message-square"></i></div>
-                        <h3>智能会话</h3>
-                        <p>基于私有模型，像家人一样与你交流，记住家庭的每一个细节。</p>
+                        <h3>智能对话</h3>
+                        <p>话题会话、技能调用、研究文章。看完可以直接剪藏进库，不用再复制到别处。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="f-icon"><i data-lucide="sunrise"></i></div>
+                        <h3>见闻简报</h3>
+                        <p>朝闻天下、暮省一日、拾得入册。外闻与家事收成每天能扫一眼的样子。</p>
                     </div>
                     <div class="feature-card">
                         <div class="f-icon"><i data-lucide="calendar"></i></div>
-                        <h3>自动化排程</h3>
-                        <p>Agent 驱动的任务调度 system，自动管理提醒、作业与家庭事务。</p>
+                        <h3>家庭日历</h3>
+                        <p>日程、火车、购物、剪藏与农历节气叠在同一张月历上。</p>
                     </div>
                     <div class="feature-card">
-                        <div class="f-icon"><i data-lucide="layers"></i></div>
-                        <h3>多端联动</h3>
-                        <p>桌面端、Pad 陪伴屏、移动端实时同步，信息流转不间断。</p>
+                        <div class="f-icon"><i data-lucide="list-todo"></i></div>
+                        <h3>待办规划</h3>
+                        <p>全家一周看板。工作与家事分开，进度一眼可见。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="f-icon"><i data-lucide="images"></i></div>
+                        <h3>相册与知识</h3>
+                        <p>本地时光轴记下生活；Wiki 结论 + 剪藏原料，对接你自己的 Obsidian。</p>
                     </div>
                     <div class="feature-card">
                         <div class="f-icon"><i data-lucide="shield-check"></i></div>
-                        <h3>隐私安全</h3>
-                        <p>核心数据本地化存储，端到端加密，守护家庭最私密的角落。</p>
+                        <h3>本地隐私</h3>
+                        <p>账本可脱敏，相册走本地路径。核心数据不上传云端，主权在你手里。</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="showcase">
+            <div class="container">
+                <h2 class="section-title text-center">真实界面</h2>
+                <p class="section-lead text-center">下面是正在使用的 Home Core，不是效果图。</p>
+
+                <article class="showcase-row">
+                    <div class="showcase-copy">
+                        <span class="scene-trait">对话</span>
+                        <h3>像家人一样说话，也能把事情做完</h3>
+                        <p>丢一篇文章给小暖，她会读完、归纳、给出判断，并问你要不要剪藏进库。输入 <code>/</code> 即可调用技能，话题会话互不打扰。</p>
+                    </div>
+                    <button type="button" class="shot" onclick="openLightbox('./images/chat.jpg', '和小暖对话')">
+                        <img src="./images/chat.jpg" alt="对话界面" loading="lazy" />
+                    </button>
+                </article>
+
+                <article class="showcase-row reverse">
+                    <div class="showcase-copy">
+                        <span class="scene-trait">见闻</span>
+                        <h3>早上扫一眼，家里今天要发生什么</h3>
+                        <p>朝闻天下把当日日程、待办和值得关注的事放在同一页。暮省一日再把这一天收回来。不是信息流，是给这一家准备的简报。</p>
+                    </div>
+                    <button type="button" class="shot" onclick="openLightbox('./images/jianwen.jpg', '见闻 · 朝闻天下')">
+                        <img src="./images/jianwen.jpg" alt="见闻：朝闻天下" loading="lazy" />
+                    </button>
+                </article>
+
+                <article class="showcase-row">
+                    <div class="showcase-copy">
+                        <span class="scene-trait">日历</span>
+                        <h3>一张月历，装下出行、课表和快递</h3>
+                        <p>课程、火车、京东淘宝、Obsidian 剪藏、农历节气叠在格子里。点开某一天，车票、课表和待办并排出现。</p>
+                    </div>
+                    <div class="shot-stack">
+                        <button type="button" class="shot" onclick="openLightbox('./images/rili.jpg', '家庭日历')">
+                            <img src="./images/rili.jpg" alt="家庭日历月视图" loading="lazy" />
+                        </button>
+                        <button type="button" class="shot" onclick="openLightbox('./images/daily.jpg', '当日详情')">
+                            <img src="./images/daily.jpg" alt="日历当日详情：车票与课表" loading="lazy" />
+                        </button>
+                    </div>
+                </article>
+
+                <article class="showcase-row reverse">
+                    <div class="showcase-copy">
+                        <span class="scene-trait">规划</span>
+                        <h3>这一周，全家人的事摊在桌上</h3>
+                        <p>按天展开的周看板，工作与家事分栏，紧急和常规一眼可辨。完成进度就在页眉，不用再问「这周还剩什么」。</p>
+                    </div>
+                    <button type="button" class="shot" onclick="openLightbox('./images/todos.jpg', '待办与规划')">
+                        <img src="./images/todos.jpg" alt="待办与规划周看板" loading="lazy" />
+                    </button>
+                </article>
+
+                <article class="showcase-row">
+                    <div class="showcase-copy">
+                        <span class="scene-trait">相册</span>
+                        <h3>照片留在家里，不送进别人的云</h3>
+                        <p>按时光轴浏览本地相册，打开一张能看到拍摄时间、地点和地图。原图还在你的硬盘上，小暖只是帮你把回忆理清楚。</p>
+                    </div>
+                    <div class="shot-stack">
+                        <button type="button" class="shot" onclick="openLightbox('./images/photos.jpg', '家庭相册')">
+                            <img src="./images/photos.jpg" alt="家庭相册时光轴" loading="lazy" />
+                        </button>
+                        <button type="button" class="shot" onclick="openLightbox('./images/photo_detail.jpg', '照片详情')">
+                            <img src="./images/photo_detail.jpg" alt="照片详情：时间、地点与地图" loading="lazy" />
+                        </button>
+                    </div>
+                </article>
+
+                <article class="showcase-row reverse">
+                    <div class="showcase-copy">
+                        <span class="scene-trait">知识库</span>
+                        <h3>结论进 Wiki，原料进剪藏</h3>
+                        <p>对话里研究过的东西不会散落。概念、实体、综合结论可检索；原始剪藏按来源归类。深读和编辑交给 Obsidian，小暖负责把材料养起来。</p>
+                    </div>
+                    <button type="button" class="shot" onclick="openLightbox('./images/knowledge.jpg', '知识库')">
+                        <img src="./images/knowledge.jpg" alt="知识库：Wiki 结论与剪藏" loading="lazy" />
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <section class="family-os">
+            <div class="container">
+                <h2 class="section-title text-center">家庭事务</h2>
+                <p class="section-lead text-center">成员、留言、订单、账本、出行。琐事进了系统，就不必再记在脑子里。</p>
+                <div class="mosaic">
+                    <button type="button" class="mosaic-card" onclick="openLightbox('./images/members.jpg', '家庭成员')">
+                        <img src="./images/members.jpg" alt="家庭成员" loading="lazy" />
+                        <div class="mosaic-caption">
+                            <h4>家庭成员</h4>
+                            <p>身份、微信绑定、身高体重与成长记录</p>
+                        </div>
+                    </button>
+                    <button type="button" class="mosaic-card" onclick="openLightbox('./images/message-board.jpg', '家庭留言板')">
+                        <img src="./images/message-board.jpg" alt="家庭留言板" loading="lazy" />
+                        <div class="mosaic-caption">
+                            <h4>留言板</h4>
+                            <p>给家人贴一张暖色便签</p>
+                        </div>
+                    </button>
+                    <button type="button" class="mosaic-card" onclick="openLightbox('./images/orders.jpg', '购物订单')">
+                        <img src="./images/orders.jpg" alt="京东与淘宝订单同步" loading="lazy" />
+                        <div class="mosaic-caption">
+                            <h4>订单</h4>
+                            <p>京东、淘宝同步，物流与消费一眼可查</p>
+                        </div>
+                    </button>
+                    <button type="button" class="mosaic-card" onclick="openLightbox('./images/finance.jpg', '家庭账本')">
+                        <img src="./images/finance.jpg" alt="家庭账本" loading="lazy" />
+                        <div class="mosaic-caption">
+                            <h4>账本</h4>
+                            <p>净资产、流动性账户，金额可脱敏显示</p>
+                        </div>
+                    </button>
+                    <button type="button" class="mosaic-card mosaic-wide" onclick="openLightbox('./images/train.jpg', '出行')">
+                        <img src="./images/train.jpg" alt="火车出行行程" loading="lazy" />
+                        <div class="mosaic-caption">
+                            <h4>出行</h4>
+                            <p>车票、车次、检票口，待出行与历史行程分开看</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download">
+            <div class="container">
+                <h2 class="section-title text-center">把小暖请回家</h2>
+                <p class="section-lead text-center">当前版本 v0.1.43。安装后数据保存在本机，可按需接入微信与家庭设备。</p>
+                <div class="download-grid">
+                    <a class="download-card"
+                        href="https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan-0.1.43-arm64.dmg">
+                        <div class="download-icon"><i data-lucide="apple"></i></div>
+                        <div>
+                            <h3>macOS · Apple Silicon</h3>
+                            <p>M1 / M2 / M3 / M4 · XiaoNuan-0.1.43-arm64.dmg</p>
+                        </div>
+                    </a>
+                    <a class="download-card"
+                        href="https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan-0.1.43.dmg">
+                        <div class="download-icon"><i data-lucide="apple"></i></div>
+                        <div>
+                            <h3>macOS · Intel</h3>
+                            <p>Intel 芯片 · XiaoNuan-0.1.43.dmg</p>
+                        </div>
+                    </a>
+                    <a class="download-card"
+                        href="https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan.Setup.0.1.43.exe">
+                        <div class="download-icon"><i data-lucide="app-window"></i></div>
+                        <div>
+                            <h3>Windows</h3>
+                            <p>安装包 · XiaoNuan.Setup.0.1.43.exe</p>
+                        </div>
+                    </a>
+                </div>
+                <p class="download-more">
+                    <a href="https://github.com/lepfinder/xiaonuan-releases/releases/latest" target="_blank" rel="noreferrer">查看全部发布说明</a>
+                    ·
+                    <a href="https://github.com/lepfinder/xiaonuan-agent" target="_blank" rel="noreferrer">源代码</a>
+                </p>
+            </div>
+        </section>
     </div>
 
-    <!-- TAB 2: STORYBOOK PAGE -->
-    <div id="tab-story" class="tab-content">
+    <!-- TAB 2: STORYBOOK PAGE（人设过时，入口暂时隐藏） -->
+    <div id="tab-story" class="tab-content" hidden>
         <header class="story-hero">
             <h1>小暖：海风吹过的时光</h1>
             <p>“不慌不忙，温暖如初。” </p>
@@ -309,25 +453,30 @@
         </div>
     </footer>
 
+    <div id="lightbox" class="lightbox" hidden>
+        <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="关闭">×</button>
+        <img id="lightbox-img" alt="" />
+        <p id="lightbox-caption"></p>
+    </div>
+
     <script>
         lucide.createIcons();
 
-        // Tab 切换逻辑
-        function switchTab(tabId, event) {
+        function switchTab(tabId, event, options) {
             if (event) {
                 event.preventDefault();
             }
 
-            // 1. 切换 Tab 链接激活状态
             document.querySelectorAll('.tab-link').forEach(link => {
                 link.classList.remove('active');
             });
-            const activeLink = event ? event.target : document.querySelector(`.tab-link[onclick*="'${tabId}'"]`);
+            const activeLink = (event && event.target.classList.contains('tab-link'))
+                ? event.target
+                : document.querySelector(`.tab-link[onclick*="'${tabId}'"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
             }
 
-            // 2. 切换内容显示与淡入
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
@@ -335,17 +484,49 @@
             if (activeContent) {
                 activeContent.classList.add('active');
 
-                // 如果是切换到故事集，触发一次 Intersection Observer 的检测
                 if (tabId === 'story') {
                     setTimeout(triggerScrollDetect, 100);
                 }
             }
 
-            // 3. 回滚到顶部
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (!options || options.scroll !== false) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
 
-        // 绘本场景淡入滚动监听
+        function goDownload(event) {
+            if (event) event.preventDefault();
+            const productTab = document.getElementById('tab-product');
+            if (!productTab.classList.contains('active')) {
+                switchTab('product', null, { scroll: false });
+            }
+            requestAnimationFrame(() => {
+                document.getElementById('download').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+
+        function openLightbox(src, caption) {
+            const box = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-caption').textContent = caption || '';
+            box.hidden = false;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const box = document.getElementById('lightbox');
+            box.hidden = true;
+            document.getElementById('lightbox-img').src = '';
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
         const storyObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -357,8 +538,6 @@
         function triggerScrollDetect() {
             document.querySelectorAll('.scene').forEach((el) => {
                 storyObserver.observe(el);
-
-                // 保底检测：如果元素已经在可视区域内，直接赋予 visible
                 const rect = el.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
                     el.classList.add('visible');
@@ -366,7 +545,6 @@
             });
         }
 
-        // 首次加载初始化
         document.addEventListener('DOMContentLoaded', () => {
             triggerScrollDetect();
         });

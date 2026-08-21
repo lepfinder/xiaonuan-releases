@@ -8,16 +8,18 @@
 本项目是 **小暖 (XiaoNuan)** 的官方二进制发布与分发仓库。
 
 ### 🌐 访问官网
-想要了解更多特性或查看美图，请访问：
+想要了解产品能力或查看真实界面，请访问：
 👉 **[https://lepfinder.github.io/xiaonuan-releases/](https://lepfinder.github.io/xiaonuan-releases/)**
 
 ---
 
-### 📦 快速下载 (macOS)
-您可以直接从 GitHub Release 页面获取最新的安装包：
-- **[下载最新版本 (.dmg)](https://github.com/lepfinder/xiaonuan-releases/releases/latest)**
+### 📦 快速下载
+当前版本 **v0.1.43**，可从 GitHub Release 获取安装包：
 
-> **注意**：目前仅支持 Apple Silicon (M1/M2/M3) 系列芯片。
+- **[macOS Apple Silicon (.dmg)](https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan-0.1.43-arm64.dmg)**
+- **[macOS Intel (.dmg)](https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan-0.1.43.dmg)**
+- **[Windows 安装包 (.exe)](https://github.com/lepfinder/xiaonuan-releases/releases/latest/download/XiaoNuan.Setup.0.1.43.exe)**
+- **[全部版本](https://github.com/lepfinder/xiaonuan-releases/releases/latest)**
 
 ### 🛠️ 自动更新说明
 本仓库内的 `latest-mac.yml` 文件用于驱动桌面端软件的自动更新检查。只要您在桌面端看到琥珀色更新提醒，即可一键升级至本仓库中的最新版本。
@@ -25,10 +27,15 @@
 ---
 
 ### 💡 关于本项目
-小暖是一个专注于家庭事务管理的智能 Agent 系统。它能够：
-- **智能对话**：像家人一样交流，记住家庭细节。
-- **排程管理**：自动调度提醒、作业和日常任务。
-- **多端联动**：在桌面、Pad 陪伴屏之间实现无缝信息流转。
+小暖是一个本地优先的家庭智能中枢。它能够：
+
+- **智能对话**：话题会话、技能调用，研究文章后一键剪藏进库。
+- **见闻简报**：朝闻天下、暮省一日，把外闻与家事收成每天能扫一眼的样子。
+- **家庭日历 / 待办**：日程、火车、购物与农历节气叠在同一张月历上；全家一周看板一起推进。
+- **相册与知识库**：本地时光轴记下生活；Wiki 结论 + 剪藏原料，对接 Obsidian。
+- **家庭事务**：成员档案、留言板、京东淘宝订单、账本（金额可脱敏）、火车出行。
+
+核心数据保存在本机，不依赖云端同步。
 
 ---
 © 2026 HomeCore Team. Crafted with love for family.
