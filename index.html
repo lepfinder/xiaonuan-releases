@@ -47,9 +47,37 @@
                 </div>
             </div>
             <div class="container">
-                <button type="button" class="shot hero-shot" onclick="openLightbox('./images/chat.jpg', '和小暖对话')">
-                    <img src="./images/chat.jpg" alt="和小暖对话：研究文章、调用技能、一键剪藏进库" />
-                </button>
+                <div class="hero-carousel" data-carousel>
+                    <div class="hero-viewport">
+                        <button type="button" class="hero-slide is-active" data-caption="查今日火车票" onclick="openLightbox('./images/hero1.jpg', '查今日火车票')">
+                            <img src="./images/hero1.jpg" alt="查今日火车票，直接给出车次与座位" />
+                        </button>
+                        <button type="button" class="hero-slide" data-caption="本周待办排程" onclick="openLightbox('./images/hero2.jpg', '本周待办排程')">
+                            <img src="./images/hero2.jpg" alt="把本周待办整理成可执行的清单" loading="lazy" />
+                        </button>
+                        <button type="button" class="hero-slide" data-caption="骑行路线规划" onclick="openLightbox('./images/hero3.jpg', '骑行路线规划')">
+                            <img src="./images/hero3.jpg" alt="从家到五大道的骑行路线与地图" loading="lazy" />
+                        </button>
+                        <button type="button" class="hero-slide" data-caption="研究文章并剪藏" onclick="openLightbox('./images/hero4.jpg', '研究文章并剪藏')">
+                            <img src="./images/hero4.jpg" alt="研究文章、给出判断，并一键剪藏进库" loading="lazy" />
+                        </button>
+                    </div>
+                    <button type="button" class="hero-nav prev" aria-label="上一张">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button type="button" class="hero-nav next" aria-label="下一张">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                    <div class="hero-controls">
+                        <p class="hero-caption">查今日火车票</p>
+                        <div class="hero-dots" role="tablist" aria-label="首屏截图">
+                            <button type="button" class="hero-dot is-active" aria-label="第 1 张"></button>
+                            <button type="button" class="hero-dot" aria-label="第 2 张"></button>
+                            <button type="button" class="hero-dot" aria-label="第 3 张"></button>
+                            <button type="button" class="hero-dot" aria-label="第 4 张"></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -103,8 +131,8 @@
                         <h3>像家人一样说话，也能把事情做完</h3>
                         <p>丢一篇文章给小暖，她会读完、归纳、给出判断，并问你要不要剪藏进库。输入 <code>/</code> 即可调用技能，话题会话互不打扰。</p>
                     </div>
-                    <button type="button" class="shot" onclick="openLightbox('./images/chat.jpg', '和小暖对话')">
-                        <img src="./images/chat.jpg" alt="对话界面" loading="lazy" />
+                    <button type="button" class="shot" onclick="openLightbox('./images/hero4.jpg', '和小暖对话')">
+                        <img src="./images/hero4.jpg" alt="对话界面" loading="lazy" />
                     </button>
                 </article>
 
@@ -545,8 +573,66 @@
             });
         }
 
+        function initHeroCarousel() {
+            const root = document.querySelector('[data-carousel]');
+            if (!root) return;
+
+            const slides = [...root.querySelectorAll('.hero-slide')];
+            const dots = [...root.querySelectorAll('.hero-dot')];
+            const caption = root.querySelector('.hero-caption');
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let index = 0;
+            let timer = null;
+
+            function go(next) {
+                index = (next + slides.length) % slides.length;
+                slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+                dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+                if (caption) caption.textContent = slides[index].dataset.caption || '';
+            }
+
+            function start() {
+                stop();
+                if (reduceMotion || slides.length < 2) return;
+                timer = setInterval(() => go(index + 1), 4500);
+            }
+
+            function stop() {
+                if (timer) clearInterval(timer);
+                timer = null;
+            }
+
+            root.querySelector('.hero-nav.prev').addEventListener('click', (e) => {
+                e.stopPropagation();
+                go(index - 1);
+                start();
+            });
+            root.querySelector('.hero-nav.next').addEventListener('click', (e) => {
+                e.stopPropagation();
+                go(index + 1);
+                start();
+            });
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    go(i);
+                    start();
+                });
+            });
+
+            root.addEventListener('mouseenter', stop);
+            root.addEventListener('mouseleave', start);
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) stop();
+                else start();
+            });
+
+            start();
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             triggerScrollDetect();
+            initHeroCarousel();
         });
     </script>
 </body>
