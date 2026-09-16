@@ -9,7 +9,6 @@
 
 [![Official Website](https://img.shields.io/badge/Official_Website-xiaonuan.me-d97706?style=for-the-badge&logo=googlechrome&logoColor=white)](https://xiaonuan.me/)
 [![Latest Release](https://img.shields.io/github/v/release/lepfinder/xiaonuan-releases?style=for-the-badge&color=1B365D)](https://github.com/lepfinder/xiaonuan-releases/releases/latest)
-[![Source Code](https://img.shields.io/badge/GitHub-xiaonuan--agent-24292e?style=for-the-badge&logo=github)](https://github.com/lepfinder/xiaonuan-agent)
 [![Local-First](https://img.shields.io/badge/Data_Privacy-100%25_Local--First-10B981?style=for-the-badge)](https://xiaonuan.me/)
 
 <br>
@@ -18,7 +17,7 @@
 
 <br><br>
 
-🌐 **官方网站**：[https://xiaonuan.me/](https://xiaonuan.me/) · 📖 **开源源码**：[lepfinder/xiaonuan-agent](https://github.com/lepfinder/xiaonuan-agent) · 👨‍💻 **关于作者**：[希扬的工作室](https://xiyang.ai.studio/)
+🌐 **官方网站**：[https://xiaonuan.me/](https://xiaonuan.me/) · 👨‍💻 **关于作者**：[希扬的工作室](https://xiyang.ai.studio/)
 
 </div>
 
@@ -176,7 +175,6 @@
 ## 🔗 相关链接与社区
 
 - 🌐 **官方主页 (Official Site)**: [https://xiaonuan.me/](https://xiaonuan.me/)
-- 💻 **开源核心代码仓 (Source Code)**: [lepfinder/xiaonuan-agent](https://github.com/lepfinder/xiaonuan-agent)
 - 📦 **发布与镜像仓 (Releases Repo)**: [lepfinder/xiaonuan-releases](https://github.com/lepfinder/xiaonuan-releases)
 - 👨‍💻 **作者个人主页**: [https://xiyang.ai.studio/](https://xiyang.ai.studio/)
 - 📮 **作者 GitHub**: [@lepfinder (希扬)](https://github.com/lepfinder)
